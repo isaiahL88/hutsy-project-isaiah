@@ -17,7 +17,7 @@ const Events = (props) => {
         </div>
     )
 
-    const fetchEvents() => {
+    const fetchEvents = () => {
         //Will need to change the url if we look for specific events....
         var url = "";
         fetch("")

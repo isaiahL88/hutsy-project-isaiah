@@ -1,0 +1,44 @@
+/* Event Tabs / Buttons Styling */
+/* Used to show the selected tab a different color */
+
+#active {
+    color: #111936 !important;
+}
+
+#activeView {
+    fill: #111936;
+}
+
+#normalView {
+    fill: #A9AEB4;
+}
+
+#filterTabs li {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: #A9AEB4;
+}
+
+#filterTabs li:hover {
+    color: #111936
+}
+
+
+#eventsTab {
+    width: 80vw;
+
+}
+
+#viewButtons {
+    float: right;
+}
+
+@import url('https://fonts.cdnfonts.com/css/basier');
+
+#eventsPage {
+    font-family: 'Basier Circle', sans-serif;
+
+
+}
