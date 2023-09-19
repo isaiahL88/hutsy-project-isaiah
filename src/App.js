@@ -8,7 +8,8 @@ import {
 } from "react-router-dom";
 import Login from "./components/Login";
 import EventsPage from "./components/EventsPage";
-import Profile from "./components/Profile"
+import Profile from "./components/Profile";
+import NotFound from "./components/NotFound";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         {/* To be implemented */}
         {/* <Route path="/Profile" element={<Profile />} /> */}
         <Route path="*" element={<Navigate to="/" />} />
+        <Route path="NotFound" element={<NotFound />} />
       </Routes>
     </Router>
   );
