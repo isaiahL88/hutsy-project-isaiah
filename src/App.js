@@ -19,7 +19,7 @@ function App() {
         <Route path="/Events" element={<EventsPage />} />
         {/* To be implemented */}
         {/* <Route path="/Profile" element={<Profile />} /> */}
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<NotFound />} />
         <Route path="NotFound" element={<NotFound />} />
       </Routes>
     </Router>
