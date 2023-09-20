@@ -42,3 +42,15 @@
 
 
 }
+
+#events-header {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+#eLogo {
+    height: 30px;
+    width: 30px;
+    margin: 25px;
+}

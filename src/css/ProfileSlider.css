@@ -1,0 +1,26 @@
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.avatar {
+    height: 35px;
+    width: 35px;
+    border-radius: 17px;
+    margin: 3px;
+}
+
+#profile {
+    width: 500px;
+    margin: 25px;
+}
+
+#profile-button {
+    width: 400;
+    height: 40px;
+    border-radius: 20px;
+    padding: 5px;
+}

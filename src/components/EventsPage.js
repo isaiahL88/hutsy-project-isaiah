@@ -5,6 +5,7 @@ import Events from './Events';
 import grid from "../assets/grid.svg";
 import listView from "../assets/list_view.svg";
 import "../css/EventsPage.css"
+import eLogo from "../assets/e_logo.png"
 
 
 /*
@@ -40,8 +41,8 @@ class EventsPage extends React.Component {
         const { activeTab, activeView } = this.state;
         return (
             <div id="eventsPage" >
-                <div>
-                    <img src="" />
+                <div id="events-header">
+                    <img id="eLogo" src={eLogo} />
                     <ProfileSlider />
                 </div>
                 <div id="eventsTab">
