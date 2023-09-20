@@ -1,0 +1,7 @@
+#events-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70vw;
+    height: 60vh;
+}

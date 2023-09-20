@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 
 //This component is used as the entire login page for HustyConnect
-const Login = () => {
+const Login = ({ setToken }) => {
+
     const navigate = useNavigate();
     //Handles submit from the login form
     const handleSubmit = (e) => {
@@ -29,11 +30,11 @@ const Login = () => {
                     // TODO:Should move onto events page 
                     alert("Successful Login");
                     //This just navigates user to the events page
-                    navigate("/events");
+                    setToken(response.json().jwt);
                 } else {
                     alert("error, response code: " + response.status);
                 }
-            });
+            })
     }
     return (
         <div id="loginPage">

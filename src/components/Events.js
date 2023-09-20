@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import Event from './Event';
+import "../css/Events.css"
 
 
 const Events = (props) => {
@@ -25,7 +26,7 @@ const Events = (props) => {
     }, []);
 
     return (
-        <div>
+        <div id="event-box">
             {events.map((event) =>
                 <Event
                     title={event.title}
