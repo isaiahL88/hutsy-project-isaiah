@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import EventsPage from "./components/EventsPage";
 import Profile from "./components/Profile";
 import NotFound from "./components/NotFound";
+import WentWrong from './components/WentWrong';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         {/* <Route path="/Profile" element={<Profile />} /> */}
         <Route path="*" element={<NotFound />} />
         <Route path="NotFound" element={<NotFound />} />
+        <Route path="WentWrong" element={<WentWrong />} />
       </Routes>
     </Router>
   );

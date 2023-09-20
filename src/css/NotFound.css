@@ -18,6 +18,7 @@
 #creditImg {
     height: 100vh;
     width: 25vw;
+    z-index: 1;
 }
 
 #error-section {
@@ -48,4 +49,13 @@ p {
 #text-box {
     width: 40vw;
 
+}
+
+#cloneImg {
+    position: absolute;
+    width: 446px;
+    height: 433px;
+    left: 341px;
+    top: 296px;
+    z-index: 0;
 }

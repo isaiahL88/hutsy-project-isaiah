@@ -8,12 +8,12 @@ const Events = (props) => {
     const [events, setEvents] = useState([]);
     const fetchEvents = () => {
         //Will need to change the url if we look for specific events....
-        var url = "'https://test.apihutsy.com/api/events";
-        fetch(url, {
-            method: 'GET'
-        })
-            .then((response) => response.json())
-            .then((data) => console.log(data));
+        // var url = "'https://test.apihutsy.com/api/events";
+        // fetch(url, {
+        //     method: 'GET'
+        // })
+        //     .then((response) => response.json())
+        //     .then((data) => console.log(data));
 
     }
 
