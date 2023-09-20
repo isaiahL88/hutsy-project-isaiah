@@ -47,7 +47,7 @@ class EventsPage extends React.Component {
                 <div id="eventsTab">
                     <ul id="filterTabs">
                         <li id={activeTab == 0 ? 'active' : ''} onClick={this.handleSelect.bind(this, 0)}>ALL EVENTS</li>
-                        <li id={activeTab == 1 ? 'active' : ''} onClick={this.handleSelect.bind(this, 1)}>FUTUREEVENTS</li>
+                        <li id={activeTab == 1 ? 'active' : ''} onClick={this.handleSelect.bind(this, 1)}>FUTURE EVENTS</li>
                         <li id={activeTab == 2 ? 'active' : ''} onClick={this.handleSelect.bind(this, 2)}>PAST EVENTS</li>
                     </ul>
                     <div id="viewButtons">

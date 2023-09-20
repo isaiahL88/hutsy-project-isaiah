@@ -1,9 +1,12 @@
 import React from 'react'
 import '../css/Login.css';
+import credit from "../assets/credit.png"
+import { useNavigate } from "react-router-dom";
+
 
 //This component is used as the entire login page for HustyConnect
 const Login = () => {
-
+    const navigate = useNavigate();
     //Handles submit from the login form
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,20 +28,30 @@ const Login = () => {
                 if (response.status === 200) {
                     // TODO:Should move onto events page 
                     alert("Successful Login");
+                    //This just navigates user to the events page
+                    navigate("/events");
                 } else {
                     alert("error, response code: " + response.status);
                 }
             });
     }
     return (
-        <div>
-            <h1>Sigh in to HutsyConnect</h1>
-            <p class="small">Enter your details below.</p>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="email" placeholder="Email" />
-                <input type="text" name="password" placeholder="Password" />
-                <input type="submit" />
-            </form>
+        <div id="loginPage">
+            <img id="creditImg" src={credit} />
+            <div id="loginSection">
+                <h1>Sigh in to HutsyConnect</h1>
+                <p class="small">Enter your details below.</p>
+                <form onSubmit={handleSubmit}>
+                    <div class="login-data">
+                        <input class="login-input" type="email" name="email" placeholder='Email' required />
+                    </div>
+                    <div class="login-data">
+                        <input class="login-input" type="password" name="password" placeholder='Password' required />
+                    </div>
+
+                    <input id="login-button" type="submit" value="SIGN IN" />
+                </form>
+            </div>
         </div>
     )
 }
