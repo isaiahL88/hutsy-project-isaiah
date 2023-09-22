@@ -13,10 +13,15 @@
     fill: #A9AEB4;
 }
 
+#filterTabs {
+    height: 30px;
+    list-style-type: none;
+    list-style: none;
+    padding-left: 0;
+}
+
 #filterTabs li {
-    float: left;
-    display: block;
-    text-align: center;
+    display: inline-block;
     padding: 10px;
     color: #A9AEB4;
 }
@@ -27,8 +32,12 @@
 
 
 #eventsTab {
-    width: 80vw;
-
+    width: 85vw;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #viewButtons {
@@ -39,14 +48,13 @@
 
 #eventsPage {
     font-family: 'Basier Circle', sans-serif;
-
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #events-header {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
+    width: 100vw;
 }
 
 #eLogo {

@@ -10,19 +10,19 @@ import "../css/ProfileSlider.css"
 
 
 const ProfileSlider = () => {
-    const [anchor, setAnchor] = useState([]);
-    const open = Boolean(anchor);
+    const [anchorEl, setAnchorEl] = useState([]);
+    const open = Boolean(anchorEl);
 
 
     //Handles click for the profile slider
     const handleClick = (event) => {
-        setAnchor(event.currentTarget);
+        setAnchorEl(event.currentTarget);
     };
 
 
     //Handles closing the menu
     const handleClose = () => {
-        setAnchor(null);
+        setAnchorEl(null);
     };
 
     //Handles profile click
@@ -72,7 +72,7 @@ const ProfileSlider = () => {
             </div>
             <Menu
                 id="fade-menu"
-                anchor={anchor}
+                anchorEl={anchorEl}
                 keepMounted
                 open={open}
                 onClose={handleClose}
