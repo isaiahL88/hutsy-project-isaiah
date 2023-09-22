@@ -5,8 +5,14 @@ export default function useToken() {
     //This simply checks the session storage for the token
     const getToken = () => {
         const tokenString = sessionStorage.getItem('token');
-        const userToken = JSON.parse(tokenString);
-        return userToken?.jwt
+
+        //Originally used this, but it was causing errors, and i didn't get the point
+        //of change back and forth from json, although it might be important
+        // console.log("stored: ");
+        // console.log(userToken);
+        // return userToken?.jwt;
+
+        return tokenString;
     };
 
     const [token, setToken] = useState(getToken());
@@ -19,7 +25,7 @@ export default function useToken() {
         sessionStorage.setItem('token', userToken);
         //This line gets the jwt as specified in the api
         console.log(userToken);
-        setToken(userToken.jwt);
+        setToken(userToken);
     };
 
     return {

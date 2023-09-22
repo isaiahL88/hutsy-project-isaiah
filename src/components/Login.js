@@ -25,16 +25,11 @@ const Login = ({ setToken }) => {
             }
         })
             //After the login request is made this bit checks if the api responded with ok status
-            .then((response) => {
-                if (response.status === 200) {
-                    // TODO:Should move onto events page 
-                    alert("Successful Login");
-                    //This just navigates user to the events page
-                    setToken(response.json().jwt);
-                } else {
-                    alert("error, response code: " + response.status);
-                }
-            })
+            .then((response) => response.json())
+            .then((data) => {
+                setToken(data.jwt);
+                console.log(data);
+            });
     }
     return (
         <div id="loginPage">

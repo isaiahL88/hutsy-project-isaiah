@@ -37,6 +37,7 @@ function App() {
       <Routes>
         {/* This route is not need if the user has a token */}
         {/* <Route path="/" element={<Login />} /> */}
+        <Route path="/" element={<EventsPage />} />
         <Route path="/Events" element={<EventsPage />} />
         {/* To be implemented */}
         {/* <Route path="/Profile" element={<Profile />} /> */}
