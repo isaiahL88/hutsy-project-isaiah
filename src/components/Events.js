@@ -9,12 +9,21 @@ const Events = (props) => {
     const [events, setEvents] = useState([]);
     const fetchEvents = () => {
         //Will need to change the url if we look for specific events....
-        var url = "https://test.apihutsy.com/api/events";
-        fetch(url, {
-            method: 'GET'
-        })
-            .then((response) => response.json())
-            .then((data) => console.log(data));
+        var url = "https://test.apihutsy.com/api/events?sort=asc&fields=title";
+        //This might be a risky line to add, but in theory, if the user is on this page
+        //a token must exist
+        var tokenString = sessionStorage.getItem('token');
+        // console.log("Trying to fetch evens with jwt: " + tokenString);
+        // fetch(url, {
+        //     method: 'GET',
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //         'jwt': tokenString,
+        //     }
+        // })
+        //     .then((response) => console.log(response.status))
+        //     .then((response) => response.json())
+        //     .then((data) => console.log(data));
     }
 
     // This code makes fetchEvents get called once when the 

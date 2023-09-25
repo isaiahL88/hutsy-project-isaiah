@@ -28,6 +28,10 @@ const Login = ({ setToken }) => {
             .then((response) => response.json())
             .then((data) => {
                 setToken(data.jwt);
+                //set the user's name here to be acesses for profile splitter
+                //and maybe more components in the future
+                sessionStorage.setItem('first', data.user.firstName);
+                sessionStorage.setItem('last', data.user.lastName);
                 console.log(data);
             });
     }
