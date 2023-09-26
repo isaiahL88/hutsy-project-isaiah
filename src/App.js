@@ -26,6 +26,9 @@ function App() {
             <Route path="/" element={<Login setToken={setToken} />} />
             <Route path="*" element={<Login setToken={setToken} />} />
             <Route path="WentWrong" element={<WentWrong />} />
+            {/* Temorary routes just for debugging while the server is down */}
+            <Route path="/Events" element={<EventsPage setToken={setToken} />} />
+            <Route path="CreateEvent" element={<CreateEvent />} />
           </Routes>
         </Router>
 
