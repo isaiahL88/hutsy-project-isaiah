@@ -1,0 +1,37 @@
+#event-box {
+    width: 24vw;
+    height: 25vh;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#event-button {
+    background-color: #77E3EF;
+    width: 100px;
+    height: 32px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+#bottom-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#attendees-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100px;
+}
+
+#person {
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+}

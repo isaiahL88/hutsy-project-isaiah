@@ -1,6 +1,7 @@
 import React from 'react'
 import "../css/Event.css"
 import { useState, useEffect } from 'react';
+import person from "../assets/person.png"
 
 
 /*  Compenent used to represent an event
@@ -19,12 +20,18 @@ const Event = (props) => {
 
     }, []);
     return (
-        <div>
-            <p id="startsAt">{props.startsAt}</p>
+        <div id="event-box">
+            {/* <p id="startsAt">{props.startsAt}</p> */}
             <h3 id="title">{props.title}</h3>
-            <p id="author">{props.author}</p>
+            {/* <p id="author">{props.author}</p> */}
             <p id="description">{props.description}</p>
-            <button id="event-button"></button>
+            <div id="bottom-row">
+                <div id="attendees-box">
+                    <img id="person" src={person} />
+                    <p id="attendees">{props.attendees}</p>
+                </div>
+                <button id="event-button">{props.button}</button>
+            </div>
         </div>
     )
 }

@@ -32,6 +32,9 @@ const Login = ({ setToken }) => {
                 //and maybe more components in the future
                 sessionStorage.setItem('first', data.user.firstName);
                 sessionStorage.setItem('last', data.user.lastName);
+
+                //store the user id, needed to see which events the user attends
+                sessionStorage.setItem('id', data.user.id);
                 console.log(data);
             });
     }
