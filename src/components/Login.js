@@ -27,6 +27,8 @@ const Login = ({ setToken }) => {
             //After the login request is made this bit checks if the api responded with ok status
             .then((response) => response.json())
             .then((data) => {
+                console.log("THis is the loging response: ");
+                console.log(data);
                 setToken(data.jwt);
                 //set the user's name here to be acesses for profile splitter
                 //and maybe more components in the future
@@ -42,6 +44,7 @@ const Login = ({ setToken }) => {
         <div id="loginPage">
             <img id="creditImg" src={credit} />
             <div id="loginSection">
+                <p id="signup-link">Don't have an account? <a href='/SignUp'>SIGN UP</a></p>
                 <h1>Sigh in to HutsyConnect</h1>
                 <p class="small">Enter your details below.</p>
                 <form onSubmit={handleSubmit}>

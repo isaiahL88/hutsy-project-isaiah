@@ -52,17 +52,17 @@ const Events = (props) => {
         //This might be a risky line to add, but in theory, if the user is on this page
         //a token must exist
         var tokenString = sessionStorage.getItem('token');
-        // console.log("Trying to fetch evens with jwt: " + tokenString);
-        // fetch(url, {
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-type': 'application/json; charset=UTF-8',
-        //         'jwt': tokenString,
-        //     }
-        // })
-        //     .then((response) => console.log(response.status))
-        //     .then((response) => response.json())
-        //     .then((data) => console.log(data));
+        console.log("Trying to fetch evens with jwt: " + tokenString);
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'jwt': tokenString,
+            }
+        })
+            .then((response) => console.log(response.status))
+            .then((response) => response.json())
+            .then((data) => console.log(data));
     }
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     //just used for the list view toggle botton

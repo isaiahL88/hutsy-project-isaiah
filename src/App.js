@@ -12,6 +12,7 @@ import NotFound from "./components/NotFound";
 import WentWrong from './components/WentWrong';
 import useToken from './components/useToken';
 import CreateEvent from './components/CreateEvent';
+import SignUp from './components/SignUp';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             {/* Temorary routes just for debugging while the server is down */}
             <Route path="/Events" element={<EventsPage setToken={setToken} />} />
             <Route path="CreateEvent" element={<CreateEvent />} />
+            <Route path="SignUp" element={<SignUp />} />
           </Routes>
         </Router>
 
@@ -50,6 +52,9 @@ function App() {
         <Route path="NotFound" element={<NotFound />} />
         <Route path="WentWrong" element={<WentWrong />} />
         <Route path="CreateEvent" element={<CreateEvent />} />
+        <Route path="SignUp" element={<SignUp />} />
+
+
       </Routes>
     </Router>
   );
