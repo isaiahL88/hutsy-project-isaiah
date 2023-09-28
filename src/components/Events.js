@@ -9,7 +9,7 @@ const Events = (props) => {
         {
             title: 'learning java',
             description: 'a short tutorial on the java programming language',
-            startsAt: Date.parse(new Date()),
+            startsAt: new Date(),
             capacity: 10,
             attendees: [3, 4, 6],
             createAt: Date.parse(new Date()),
@@ -21,7 +21,7 @@ const Events = (props) => {
         {
             title: 'Ted Talk, How to Stay Creative',
             description: 'A talk showing the steps you need to take to utilize all your creativity',
-            startsAt: Date.parse(new Date),
+            startsAt: new Date(),
             capacity: 30,
             attendees: [3, 4, 6, 7, 8, 10, 12],
             createAt: Date.parse(new Date),
@@ -33,7 +33,7 @@ const Events = (props) => {
         {
             title: 'Talent Show',
             description: 'A talent show hosted for the univeristy, allowing students to show off their skill',
-            startsAt: Date.parse(new Date),
+            startsAt: new Date(),
             capacity: 30,
             attendees: [3, 4, 6, 7, 8, 10, 12, 20, 25, 30, 50, 70, 77],
             createAt: Date.parse(new Date),
@@ -64,7 +64,9 @@ const Events = (props) => {
         //     .then((response) => response.json())
         //     .then((data) => console.log(data));
     }
-
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    //just used for the list view toggle botton
+    const isList = props.isList;
     //This function is used to check the annted / owernship status of a user with an event
     const checkAttend = (event) => {
         //If the user created the event, they have the option to edit
@@ -87,12 +89,13 @@ const Events = (props) => {
     }, []);
 
     return (
-        <div id="events-box">
+        <div id={isList ? "active-events-box" : "events-box"}>
             {eventsTest.map((event) =>
                 <Event
+                    isList={props.isList}
                     title={event.title}
-                    // author={event.createdBy}
-                    startsAt={event.startsAt.toString}
+                    author={event.createdBy.id}
+                    startsAt={event.startsAt.toLocaleDateString('en-US', options)}
                     description={event.description}
                     //A small string used to show attendees / capacity
                     attendees={event.attendees.length + " of " + event.capacity}

@@ -35,3 +35,65 @@
     height: 15px;
     padding: 5px;
 }
+
+/* List View Styling */
+#active-event-box {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 85vw;
+    height: 10vh;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#active-event-box>* {
+    display: inline-block;
+}
+
+#active-title {
+    position: relative;
+    margin-left: 25px;
+    order: 1;
+}
+
+#active-bottom-row {
+    order: 5;
+}
+
+#active-bottom-row>* {
+    display: inline-block;
+}
+
+#active-attendees-box>* {
+    display: inline-block;
+}
+
+#active-event-button {
+    margin-right: 30px;
+    margin-left: 30px;
+    background-color: #77E3EF;
+    width: 100px;
+    height: 32px;
+    border: 0px;
+    border-radius: 5px;
+    order: 6;
+}
+
+#active-person {
+    display: none;
+}
+
+#active-startsAt {
+    order: 4;
+}
+
+#active-author {
+    order: 3;
+}
+
+#active-description {
+    order: 2;
+}
