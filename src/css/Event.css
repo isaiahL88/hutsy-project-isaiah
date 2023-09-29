@@ -97,3 +97,55 @@
 #active-description {
     order: 2;
 }
+
+@media (max-width: 1000px) {
+    #event-box {
+        width: 95vw;
+        height: 25vh;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        margin: 5px;
+        padding: 15px;
+
+    }
+
+    #title {
+        font-size: 3em;
+        padding: 0;
+    }
+
+    #description {
+        font-size: 2em;
+    }
+
+    #author {
+        font-size: 1.5em;
+    }
+
+    #event-button {
+
+        width: 15vw;
+        height: 3vh;
+    }
+
+    #person {
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+    }
+
+    #attendees {
+        font-size: 1.5em;
+    }
+
+    #attendees-box {
+        width: 200px;
+        display: flex;
+        justify-content: left;
+    }
+
+    #active-event-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+}

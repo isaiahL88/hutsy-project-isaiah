@@ -6,3 +6,11 @@
     height: 60vh;
     justify-content: center;
 }
+
+
+@media (max-width: 1000px) {
+    #events-box {
+
+        width: 95vw;
+    }
+}

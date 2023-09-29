@@ -66,3 +66,32 @@
     font-weight: 100;
     transform: translateY(-30px);
 }
+
+@media (max-width: 1000px) {
+
+    #box-title {
+        font-size: 4em;
+    }
+
+    #details {
+        font-size: 2em;
+    }
+
+    #create-box {
+        width: 80vw;
+        height: 90vh;
+        justify-content: space-between;
+    }
+
+    .create-input {
+        width: 70vw;
+        height: 4vh;
+        font-size: 3em;
+    }
+
+    #create-button {
+        width: 70vw;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+}
