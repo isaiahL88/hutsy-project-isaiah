@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-input {
+.create-input {
     width: 20vw;
     height: 4vh;
     border: none;

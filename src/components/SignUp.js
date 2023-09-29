@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import credit from "../assets/credit.png";
 import "../css/SignUp.css"
 import NativeSelectInput from '@material-ui/core/NativeSelect/NativeSelectInput';
+import { useNavigate } from "react-router-dom";
+
 
 const SignUp = () => {
+    const navigate = useNavigate();
+
     //keep track of input for validation purposese
     const [input, setInput] = useState({
         firstname: '',
@@ -89,7 +93,31 @@ const SignUp = () => {
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault();
+        //just puts target vars into easy names
+        let { firstname, lastname, email, password } = e.target;
 
+        fetch('https://test.apihutsy.com/api/auth/user', {
+            method: 'POST',
+            body: JSON.stringify({
+                'firstName': firstname.value,
+                'lastName': lastname.value,
+                'email': email.value,
+                'password': password.value
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'accept': 'application/json'
+            }
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    alert('Succesfully created account');
+                    navigate('/Login');
+                } else {
+                    alert('Problem creating account!');
+                }
+            })
     }
 
 

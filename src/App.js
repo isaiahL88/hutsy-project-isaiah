@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
+  Navigate,
+  useNavigation
 } from "react-router-dom";
 import Login from "./components/Login";
 import EventsPage from "./components/EventsPage";
@@ -19,6 +20,8 @@ function App() {
   // Custom hook used to store token in session storage
   const { token, setToken } = useToken();
 
+
+
   if (!token) {
     return (
       <>
@@ -27,9 +30,6 @@ function App() {
             <Route path="/" element={<Login setToken={setToken} />} />
             <Route path="*" element={<Login setToken={setToken} />} />
             <Route path="WentWrong" element={<WentWrong />} />
-            {/* Temorary routes just for debugging while the server is down */}
-            <Route path="/Events" element={<EventsPage setToken={setToken} />} />
-            <Route path="CreateEvent" element={<CreateEvent />} />
             <Route path="SignUp" element={<SignUp />} />
           </Routes>
         </Router>
@@ -39,8 +39,10 @@ function App() {
   }
 
   return (
+
     <Router>
       <Routes>
+
         {/* This route is not need if the user has a token */}
         {/* <Route path="/" element={<Login />} /> */}
         {/* I am also giving settoek to evenrts page so the user can logout */}

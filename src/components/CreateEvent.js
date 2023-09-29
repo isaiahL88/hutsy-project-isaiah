@@ -14,7 +14,7 @@ const CreateEvent = () => {
     //Handeles close button click
     //Should sent the user back to the events page
     const handleClose = () => {
-        navigate("/events")
+        navigate("/Events");
     }
 
     // Handles event creation
@@ -54,12 +54,12 @@ const CreateEvent = () => {
             <form id="create-box" onSubmit="handleCreate">
                 <h1 id='box-title'>Create new event</h1>
                 <p id='details'>Enter details below</p>
-                <input id="title" name="title" placeholder='Title'></input>
-                <input id="description" name="description" placeholder='Description'></input>
-                <input id="date" name="date" placeholder='Date'></input>
-                <input id="time" name="time" placeholder='Time'></input>
-                <input id="capacity" name="capacity" placeholder='Capacity'></input>
-                <input id="create-button" type="submit" value="CREATE NEW EVENT" />
+                <input class="create-input" id="title" name="title" placeholder='Title'></input>
+                <input class="create-input" id="description" name="description" placeholder='Description'></input>
+                <input class="create-input" id="date" name="date" placeholder='Date'></input>
+                <input class="create-input" id="time" name="time" placeholder='Time'></input>
+                <input class="create-input" id="capacity" name="capacity" placeholder='Capacity'></input>
+                <input class="create-input" id="create-button" type="submit" value="CREATE NEW EVENT" />
             </form>
         </div>
     )
