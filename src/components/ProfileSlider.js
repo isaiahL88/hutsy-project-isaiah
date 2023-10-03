@@ -48,7 +48,7 @@ const ProfileSlider = ({ setToken }) => {
     useEffect(() => {
         //get the user's name from session to be displayed on this component
         processName(sessionStorage.getItem('first'), sessionStorage.getItem('last'));
-
+        setAnchorEl(false);
     }, []);
 
     //This code just makes the user's name suitable to use with the

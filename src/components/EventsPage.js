@@ -35,6 +35,14 @@ class EventsPage extends React.Component {
             activeTab: index
         })
     }
+    handleSelectForm = (e) => {
+        e.preventDefault();
+        var selectBox = document.getElementById("select-box");
+        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+        this.setState({
+            activeTab: selectedValue
+        })
+    }
 
     //used to handle event creation button
     handleAdd = () => {
@@ -83,6 +91,31 @@ class EventsPage extends React.Component {
 
                     </div>
                 </div>
+                <div id="events-tab-mobile">
+                    <div id='select-div'>
+                        <label id="select-label" for="events-select">SHOW:</label>
+                        <form id='events-select' onSubmit={this.handleSelectForm}>
+                            <select id='select-box' name='tabs' onChange={this.handleSelectForm}>
+                                <option name='0' value={0}>ALL EVENTS</option>
+                                <option name='1' value={1}>FUTURE EVENTS</option>
+                                <option name='2' value={2}>PAST EVENTS</option>
+                            </select>
+                        </form>
+
+                    </div>
+                    <div id="viewButtons">
+                        <svg onClick={this.handleView.bind(this, 0)} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H24V24H0V0Z" stroke="black" stroke-opacity="0.01" stroke-width="0" />
+                            <path id={activeView == 0 ? 'activeView' : 'normalView'} fill-rule="evenodd" clip-rule="evenodd" d="M4 11H9V5H4V11ZM4 18H9V12H4V18ZM10 18H15V12H10V18ZM16 18H21V12H16V18ZM10 11H15V5H10V11ZM16 5V11H21V5H16Z" fill="#111936" />
+                        </svg>
+                        <svg onClick={this.handleView.bind(this, 1)} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H24V24H0V0Z" stroke="black" stroke-opacity="0.01" stroke-width="0" />
+                            <path id={activeView == 1 ? 'activeView' : 'normalView'} fill-rule="evenodd" clip-rule="evenodd" d="M4 18H21V12H4V18ZM4 5V11H21V5H4Z" fill="#A9AEB4" />
+                        </svg>
+
+                    </div>
+                </div>
+
                 <Events isList={activeView === 1} />
                 <div id="add-div">
                     {/* Decided to use a link instead of navigate due to complications with class components */}

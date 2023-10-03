@@ -23,8 +23,10 @@ const Event = (props) => {
     return (
         <div id={isList ? "active-event-box" : "event-box"} >
             <p id={isList ? "active-startsAt" : "startsAt"}>{props.startsAt}</p>
-            <h3 id={isList ? "active-title" : "title"}>{props.title}</h3>
-            <p id={isList ? "active-author" : "author"}>{props.author}</p>
+            <div id="title-box">
+                <p id={isList ? "active-title" : "title"}>{props.title}</p>
+                <p id={isList ? "active-author" : "author"}>{props.author}</p>
+            </div>
             <p id={isList ? "active-description" : "description"}>{props.description}</p>
             <div id={isList ? "active-bottom-row" : "bottom-row"}>
                 <div id={isList ? "active-attendees-box" : "attendees-box"}>

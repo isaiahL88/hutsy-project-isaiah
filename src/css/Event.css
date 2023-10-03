@@ -100,41 +100,56 @@
 
 @media (max-width: 1000px) {
     #event-box {
-        width: 95vw;
-        height: 25vh;
+        width: 75vw;
+        height: 35vh;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         margin: 5px;
         padding: 15px;
-
+        justify-content: space-around;
     }
 
     #title {
-        font-size: 3em;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: black;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    #startsAt {
+        font-size: 15px;
+    }
+
+    #title-box {
+        display: block;
         padding: 0;
     }
 
     #description {
-        font-size: 2em;
+        font-size: 1em;
     }
 
     #author {
-        font-size: 1.5em;
+        margin-top: 0;
+        padding: 0;
+        font-size: 1em;
     }
 
     #event-button {
 
-        width: 15vw;
-        height: 3vh;
+        width: 20vw;
+        height: 4vh;
+        font-weight: 600;
     }
 
     #person {
-        width: 20px;
-        height: 20px;
+        width: 13px;
+        height: 13px;
         padding: 5px;
     }
 
     #attendees {
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
     #attendees-box {
@@ -143,9 +158,65 @@
         justify-content: left;
     }
 
+    /* Styling for listing view (active) */
+
     #active-event-box {
         display: flex;
         flex-direction: column;
         justify-content: left;
+        align-items: flex-start;
+        position: relative;
+        height: 18vh;
+    }
+
+    #active-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: black;
+        padding: 0;
+        margin-bottom: 0;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    #active-description {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 250px;
+        margin-left: 10px;
+    }
+
+    #active-event-button {
+        position: absolute;
+        bottom: 10px;
+        right: 0px;
+        margin-right: 10px;
+    }
+
+    #active-attendees-box {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+    }
+
+    #attendees {
+        font-size: 0.9em;
+    }
+
+    #active-startsAt {
+        position: absolute;
+        left: 10px;
+        bottom: 30px;
+        font-size: 0.9em;
+        color: "#CACDD0";
+    }
+
+    #active-description {
+        float: left;
+    }
+
+    #active-author {
+        display: none;
     }
 }
