@@ -16,7 +16,8 @@ import "../css/ProfileSlider.css"
 const ProfileSlider = ({ setToken }) => {
     const [anchorEl, setAnchorEl] = useState([]);
     const open = Boolean(anchorEl);
-
+    const [fullName, setFullName] = useState([]);
+    const [nameCode, setNameCode] = useState([]);
 
     //Handles click for the profile slider
     const handleClick = (event) => {
@@ -26,7 +27,6 @@ const ProfileSlider = ({ setToken }) => {
 
     //Handles closing the menu
     const handleClose = () => {
-        props.setToken("");
         setAnchorEl(null);
     };
 
@@ -37,13 +37,11 @@ const ProfileSlider = ({ setToken }) => {
 
     //Handles logout click
     const handleLogout = () => {
-        setToken(null);
+        setToken("");
     }
 
     //
 
-    var nameCode = "";
-    var fullName = "";
 
     //called on start up
     useEffect(() => {
@@ -56,8 +54,9 @@ const ProfileSlider = ({ setToken }) => {
     //ai used to generate profile picutre
     const processName = (firstName, lastName) => {
 
-        fullName = firstName + " " + lastName;
-        nameCode = firstName + "+" + lastName;
+        setFullName(firstName + " " + lastName);
+        setNameCode(firstName + "+" + lastName);
+        console.log("full name: " + fullName);
         //This code isn't necasary anymore because first name and last name
         //are alrady sperated
         // var names = name.split(2);
@@ -80,8 +79,8 @@ const ProfileSlider = ({ setToken }) => {
                         arrow_drop_down
                     </span>}
                 >
-                    {"John Doe"}
-                    <img class="avatar" id="profile-icon" src={"https://ui-avatars.com/api/?name=John+Doe"} />
+                    <p id="full-name">{fullName}</p>
+                    <img class="avatar" id="profile-icon" src={"https://ui-avatars.com/api/?name=" + nameCode} />
                 </Button>
 
             </div>

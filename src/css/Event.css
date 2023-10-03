@@ -15,6 +15,13 @@
     height: 32px;
     border: 0px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+#title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
 }
 
 #bottom-row {
@@ -57,6 +64,9 @@
     position: relative;
     margin-left: 25px;
     order: 1;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
 }
 
 #active-bottom-row {
@@ -91,12 +101,37 @@
 }
 
 #active-author {
-    order: 3;
+    display: none;
 }
 
 #active-description {
     order: 2;
 }
+
+#active-author-on {
+    order: 3;
+    padding-right: 30px;
+}
+
+#active-author-off {
+    display: none;
+}
+
+/* Bottle in differnt ownership status */
+.EDIT {
+    background-color: #c9ced3 !important;
+}
+
+.LEAVE {
+    background-color: #111936 !important;
+    color: white;
+}
+
+
+/* Had to create a secondary author elemnt because the old one didn't react to the
+    order attribute because it was moved into a div with title */
+
+
 
 @media (max-width: 1000px) {
     #event-box {
@@ -219,4 +254,15 @@
     #active-author {
         display: none;
     }
+
+    #active-author-on {
+        display: none;
+    }
+
+    #active-author-off {
+        display: none;
+    }
+
+    /* Bottle in differnt ownership status */
+
 }

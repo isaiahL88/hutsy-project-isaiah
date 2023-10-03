@@ -70,27 +70,36 @@
 @media (max-width: 1000px) {
 
     #box-title {
-        font-size: 4em;
+        font-size: 2em;
     }
 
     #details {
-        font-size: 2em;
+        font-size: 1em;
     }
 
     #create-box {
         width: 80vw;
-        height: 90vh;
-        justify-content: space-between;
+        height: 85vh;
+        justify-content: space-around;
     }
 
     .create-input {
         width: 70vw;
         height: 4vh;
-        font-size: 3em;
+        font-size: 1.5em !important;
+    }
+
+    #descripton {
+        font-size: 1.5em !important;
+    }
+
+    #title {
+        font-weight: normal !important;
     }
 
     #create-button {
         width: 70vw;
+        height: 60px;
         font-size: 30px;
         margin-bottom: 20px;
     }
