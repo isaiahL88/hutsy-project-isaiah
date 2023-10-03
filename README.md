@@ -11,7 +11,7 @@ Deployed at: [https://isaiahl88.github.io/hutsy-project-isaiah/]
 - Login / signup connected to API
 - Login / signup validation
 - Events Page and necessary components (Events, Event, Profile Slider)
- - (Only using hardcoded events because API is not working)
+  - (Only using hardcoded events because API is not working)
 - Responsive event buttons (Join / Leave / Edit)
 - Responsive layout for EventsPage (using view buttons)\
   - I did this by storing a flag to represent what view is toggled
@@ -52,7 +52,9 @@ Deployed at: [https://isaiahl88.github.io/hutsy-project-isaiah/]
   - Once the API is working again, the code i have commented out in the fetchEvents method should work to get all the events, if it is working you need to replace the eventsTest state array with the list events found from the api (it should be placed in a state variable so the ui re-renders when changes are made).
   - You must change the Join/Leave callback to also update the API when someone leaves or joins an event
   - Must also make use of the (All Events / Furure Events / Past Events) tab when querying the API, the current tab is stored
-    as a state variable in the EventsPage Component 
+    as a state variable in the EventsPage Component
+ - Create Event
+   - Still needs functionality to be completed (update both state and API once it is working)
 
 
 
