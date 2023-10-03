@@ -26,6 +26,7 @@ const ProfileSlider = ({ setToken }) => {
 
     //Handles closing the menu
     const handleClose = () => {
+        props.setToken("");
         setAnchorEl(null);
     };
 

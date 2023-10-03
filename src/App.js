@@ -22,7 +22,7 @@ function App() {
 
 
 
-  if (!token) {
+  if (!token || token === "") {
     return (
       <>
         <Router>
