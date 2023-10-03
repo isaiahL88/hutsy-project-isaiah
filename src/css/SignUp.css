@@ -55,3 +55,46 @@ input {
 .err {
     color: #2D0DEF;
 }
+
+/* MOBILE STYLING */
+@media (max-width: 1000px) {
+    #creditImg {
+        display: none;
+    }
+
+    #signupSection {
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    input {
+        width: 90vw;
+        height: 2.5em;
+        margin: 20px;
+        background-color: hsl(240, 20%, 98%);
+    }
+
+    #signup-link {
+        position: initial;
+        top: 10px;
+        right: 10px;
+        text-decoration: none;
+    }
+
+    #signup-form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #signup-button {
+        width: 70vw;
+        height: 3.5em;
+    }
+
+    #login-link {
+        position: initial;
+        text-decoration: none;
+    }
+}

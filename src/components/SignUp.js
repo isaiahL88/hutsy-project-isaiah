@@ -138,6 +138,7 @@ const SignUp = () => {
                     {error.password && <span className='err'>{error.password}</span>}
                     <input type='password' name='confirmPassword' placeholder='Repeat Password' onChange={handleChange} onBlur={handleValidation} onInvalid={handleValidation} required />
                     {error.confirmPassword && <span className='err'>{error.confirmPassword}</span>}
+                    <p id="login-link">Already have an account? <a href='/'>SIGN IN</a></p>
                     <input type='submit' id='signup-button' value='SIGN UP' />
                 </form>
             </div>
