@@ -9,7 +9,7 @@ import clone from "../assets/clone.png"
 const NotFound = () => {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate("/");
+        navigate("#/");
     }
     return (
         <div id="error-page">

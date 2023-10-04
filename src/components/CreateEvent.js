@@ -14,7 +14,7 @@ const CreateEvent = () => {
     //Handeles close button click
     //Should sent the user back to the events page
     const handleClose = () => {
-        navigate("/Events");
+        navigate("#/Events");
     }
 
     // Handles event creation

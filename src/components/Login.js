@@ -10,13 +10,28 @@ import { useState } from 'react';
 const Login = ({ setToken }) => {
     const [eyeOff, setEyeOff] = useState([]);
     const navigate = useNavigate();
+
+    //keep track of input for validation purposese
+    const [input, setInput] = useState({
+        email: '',
+        password: ''
+    });
+
+    //A state object used to hold any error messages needed
+    const [error, setError] = useState({
+        email: '',
+        password: '',
+    })
+
     //Handles submit from the login form
     const handleSubmit = (e) => {
         e.preventDefault();
         var email = e.target.email.value;
         var password = e.target.password.value;
-        //This bit of code will call make the login post request to the api 
-        fetch('https://test.apihutsy.com/api/auth/native', {
+        //This bit of code will call make the login post request to the api, added a proxy because
+        //it was causing a cors error in deployment
+        const url = 'https://corsproxy.io/?' + encodeURIComponent('https://test.apihutsy.com/api/auth/native');
+        fetch(url, {
             method: 'POST',
             body: JSON.stringify({
                 email: email,
@@ -50,6 +65,50 @@ const Login = ({ setToken }) => {
             setEyeOff(true);
         }
     }
+    //called when any input is cahbnged so the state can be updated
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setInput(prev => ({
+            ...prev,
+            [name]: value
+        }));
+        handleValidation(e);
+    }
+
+    //This funciton validates the input
+    //
+    //It uses the 'name' passed from the target in the e.target
+    //to know which input is being validated
+    //Then it uses the passed 'value' to validate
+    //
+    //Also uses the 'input' state to compare other input when need
+    //for example, with password and confirm password
+    const handleValidation = (e) => {
+        e.preventDefault();
+        let { name, value } = e.target;
+        setError(prev => {
+            const errState = { ...prev, [name]: "" };
+            //find which input is being validated
+            switch (name) {
+                case 'email':
+                    if (!value) {
+                        errState[name] = "Please enter an email.";
+                    }
+                    break;
+                case 'password':
+                    console.log('pass validation');
+                    if (!value) {
+                        errState[name] = "Please enter a password."
+                    }
+                    break;
+                default:
+                    break;
+            }
+            return errState;
+        }
+        );
+    }
+
     return (
         <div id="loginPage">
             <img id="creditImg" src={credit} />
@@ -58,10 +117,10 @@ const Login = ({ setToken }) => {
                 <p class="small">Enter your details below.</p>
                 <form id='login-form' onSubmit={handleSubmit}>
                     <div class="login-data">
-                        <input class="login-input" type="email" name="email" placeholder='Email' required />
+                        <input class="login-input" type="email" name="email" placeholder='Email' onChange={handleChange} onBlur={handleValidation} onInvalid={handleValidation} required />
                     </div>
                     <div class="login-data">
-                        <input class="login-input" type={eyeOff ? "password" : "text"} name="password" placeholder='Password' required />
+                        <input class="login-input" type={eyeOff ? "password" : "text"} name="password" placeholder='Password' onChange={handleChange} onBlur={handleValidation} onInvalid={handleValidation} required />
 
                         <svg id='eye' onClick={handleEyeClick} width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M11 0.5C6 0.5 1.73 3.61 0 8C1.73 12.39 6 15.5 11 15.5C16 15.5 20.27 12.39 22 
@@ -71,7 +130,7 @@ const Login = ({ setToken }) => {
 
 
                     </div>
-                    <p id="signup-link">Don't have an account? <a href='/SignUp'>SIGN UP</a></p>
+                    <p id="signup-link">Don't have an account? <a href='#/SignUp'>SIGN UP</a></p>
 
                     <input id="login-button" type="submit" value="SIGN IN" />
                 </form>

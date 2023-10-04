@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import credit from "../assets/credit.png";
 import "../css/SignUp.css"
-import NativeSelectInput from '@material-ui/core/NativeSelect/NativeSelectInput';
 import { useNavigate } from "react-router-dom";
 
 
@@ -96,8 +95,10 @@ const SignUp = () => {
         e.preventDefault();
         //just puts target vars into easy names
         let { firstname, lastname, email, password } = e.target;
-
-        fetch('https://test.apihutsy.com/api/auth/user', {
+        //This bit of code will make a sign up request to the api
+        //Note: added a proxy due to cors errors in deployment
+        const url = 'https://corsproxy.io/?' + encodeURIComponent('https://test.apihutsy.com/api/auth/user');
+        fetch(url, {
             method: 'POST',
             body: JSON.stringify({
                 'firstName': firstname.value,
@@ -113,7 +114,7 @@ const SignUp = () => {
             .then((response) => {
                 if (response.status === 200) {
                     alert('Succesfully created account');
-                    navigate('/Login');
+                    navigate('#/Login');
                 } else {
                     alert('Problem creating account!');
                 }
@@ -138,7 +139,7 @@ const SignUp = () => {
                     {error.password && <span className='err'>{error.password}</span>}
                     <input type='password' name='confirmPassword' placeholder='Repeat Password' onChange={handleChange} onBlur={handleValidation} onInvalid={handleValidation} required />
                     {error.confirmPassword && <span className='err'>{error.confirmPassword}</span>}
-                    <p id="login-link">Already have an account? <a href='/'>SIGN IN</a></p>
+                    <p id="login-link">Already have an account? <a href='#/'>SIGN IN</a></p>
                     <input type='submit' id='signup-button' value='SIGN UP' />
                 </form>
             </div>

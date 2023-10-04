@@ -1,6 +1,6 @@
 import './App.css';
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Route,
   Routes,
   Navigate,
@@ -25,14 +25,14 @@ function App() {
   if (!token || token === "") {
     return (
       <>
-        <Router>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Login setToken={setToken} />} />
             <Route path="*" element={<Login setToken={setToken} />} />
-            <Route path="WentWrong" element={<WentWrong />} />
-            <Route path="SignUp" element={<SignUp />} />
+            <Route path="/WentWrong" element={<WentWrong />} />
+            <Route path="/SignUp" element={<SignUp />} />
           </Routes>
-        </Router>
+        </HashRouter>
 
       </>
     )
@@ -40,7 +40,7 @@ function App() {
 
   return (
 
-    <Router>
+    <HashRouter>
       <Routes>
 
         {/* This route is not need if the user has a token */}
@@ -51,14 +51,12 @@ function App() {
         {/* To be implemented */}
         {/* <Route path="/Profile" element={<Profile />} /> */}
         <Route path="*" element={<NotFound />} />
-        <Route path="NotFound" element={<NotFound />} />
-        <Route path="WentWrong" element={<WentWrong />} />
-        <Route path="CreateEvent" element={<CreateEvent />} />
-        <Route path="SignUp" element={<SignUp />} />
-
+        <Route path="/NotFound" element={<NotFound />} />
+        <Route path="/WentWrong" element={<WentWrong />} />
+        <Route path="/CreateEvent" element={<CreateEvent />} />
 
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
