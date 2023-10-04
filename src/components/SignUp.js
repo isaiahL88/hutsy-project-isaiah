@@ -114,7 +114,7 @@ const SignUp = () => {
             .then((response) => {
                 if (response.status === 200) {
                     alert('Succesfully created account');
-                    navigate('#/Login');
+                    navigate('/');
                 } else {
                     alert('Problem creating account!');
                 }
