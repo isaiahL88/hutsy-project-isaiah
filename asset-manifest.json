@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hutsy-project-isaiah/static/css/main.ebf8c61e.css",
-    "main.js": "/hutsy-project-isaiah/static/js/main.3442cd2e.js",
+    "main.js": "/hutsy-project-isaiah/static/js/main.e3535ac9.js",
     "static/js/787.597535d5.chunk.js": "/hutsy-project-isaiah/static/js/787.597535d5.chunk.js",
     "static/media/credit.png": "/hutsy-project-isaiah/static/media/credit.7335a3cafef01076e17f.png",
     "static/media/clone.png": "/hutsy-project-isaiah/static/media/clone.ffe634d1772e1e738a46.png",
@@ -10,11 +10,11 @@
     "static/media/grid.svg": "/hutsy-project-isaiah/static/media/grid.396961696ac31ce28ff309de02cc0e44.svg",
     "static/media/list_view.svg": "/hutsy-project-isaiah/static/media/list_view.da3dc804435fae7fcf60b00166db1dd0.svg",
     "main.ebf8c61e.css.map": "/hutsy-project-isaiah/static/css/main.ebf8c61e.css.map",
-    "main.3442cd2e.js.map": "/hutsy-project-isaiah/static/js/main.3442cd2e.js.map",
+    "main.e3535ac9.js.map": "/hutsy-project-isaiah/static/js/main.e3535ac9.js.map",
     "787.597535d5.chunk.js.map": "/hutsy-project-isaiah/static/js/787.597535d5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ebf8c61e.css",
-    "static/js/main.3442cd2e.js"
+    "static/js/main.e3535ac9.js"
   ]
 }
